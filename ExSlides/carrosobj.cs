@@ -63,7 +63,7 @@ namespace ConceitoHeranca
                
                 Console.WriteLine("Indice do veiculo: " + carro.indice  +
                 "\n Marca " + carro.marca +
-                "\n Valor: " + carro.valor +
+                "\n Valor: " + carro.valor + " R$"
                 "\n Modelo: " + carro.modelo +
                 "\n Cor: " + carro.cor +
                 "\n ano" + carro.ano);
