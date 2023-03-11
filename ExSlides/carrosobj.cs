@@ -1,6 +1,8 @@
-﻿using System;
+
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Security.Authentication;
 
 namespace ConceitoHeranca
@@ -23,29 +25,29 @@ namespace ConceitoHeranca
         static void Main(string[] args)
         {
 
-            ArrayList carros = new ArrayList();
 
+            List<Carro> carros = new List<Carro>();
             var i = 0;
             var parar = "";
+
             do
             {
 
-
-
                 Carro carro = new Carro();
-
                 carro.indice = i++;
-                Console.WriteLine( "Indice: "+ carro.indice);
+
+                Console.WriteLine("Indice: " + carro.indice);
                 Console.WriteLine("Digite a marca do carro: ");
                 carro.marca = (Console.ReadLine());
                 Console.WriteLine("Digite o valor do carro: ");
                 carro.valor = Convert.ToInt32(Console.ReadLine());
                 Console.WriteLine("Digite o modelo do carro: ");
                 carro.modelo = Console.ReadLine();
+                Console.WriteLine("Digite a cor do carro: ");
+                carro.cor = Console.ReadLine();
                 Console.WriteLine("Digite o ano do carro");
                 carro.ano = Convert.ToInt32(Console.ReadLine());
                 carros.Add(carro);
-
 
                 Console.WriteLine("Deseja parar?");
                 parar = Console.ReadLine();
@@ -54,41 +56,20 @@ namespace ConceitoHeranca
 
 
 
-            int[] arr = new int[i];
-
-
+            carros.Sort((carro1, carro2) => carro2.valor.CompareTo(carro1.valor));
+            Console.WriteLine("Carros ordenados pelo o maior valor para o menor valor");
             foreach (Carro carro in carros)
             {
-
-
-
-                arr[carro.indice] = carro.valor;
-
-
-
-
-                Console.WriteLine("Indice do carro: " + carro.indice +
-                        "\nMarca do carro: " + carro.marca +
-                         "\n Valor do carro: " + carro.valor +
-                         "\n Modelo do carro: " + carro.modelo +
-                         "\n Ano de fabrica do carro: " + carro.ano);
-
-
-
-
+               
+                Console.WriteLine("Indice do veiculo: " + carro.indice  +
+                "\n Marca " + carro.marca +
+                "\n Valor: " + carro.valor +
+                "\n Modelo: " + carro.modelo +
+                "\n Cor: " + carro.cor +
+                "\n ano" + carro.ano);
 
             }
-
-            Array.Sort(arr);
-            Array.Reverse(arr);
-            for (int valoress = 0; valoress< arr.Length; valoress++) {
-                Console.WriteLine(arr[valoress]);
-            }
-
+            Console.ReadLine();
         }
     }
 }
-   
-
-
-
