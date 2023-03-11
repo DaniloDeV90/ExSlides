@@ -1,4 +1,3 @@
-
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -63,13 +62,14 @@ namespace ConceitoHeranca
                
                 Console.WriteLine("Indice do veiculo: " + carro.indice  +
                 "\n Marca " + carro.marca +
-                "\n Valor: " + carro.valor + " R$"
+                "\n Valor: " + carro.valor + " R$" +
                 "\n Modelo: " + carro.modelo +
                 "\n Cor: " + carro.cor +
-                "\n ano" + carro.ano);
+                "\n ano: " + carro.ano);
 
             }
             Console.ReadLine();
         }
     }
 }
+
